@@ -1,0 +1,115 @@
+.rps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.rps-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f1c40f;
+}
+
+/* Scoreboard Styling */
+.rps-scoreboard {
+  display: flex;
+  background: #1e293b;
+  padding: 15px 40px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  border: 2px solid #334155;
+}
+
+.score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-box .label { font-size: 0.7rem; color: #94a3b8; }
+.score-box .score { font-size: 2rem; font-weight: 800; }
+.score-divider { font-size: 2rem; margin: 0 20px; align-self: center; color: #3b82f6; }
+
+/* The "Battle" Stage */
+.game-stage {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.hand {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.hand p {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+.vs-text { font-weight: 900; color: #475569; }
+
+/* Result and Controls */
+.result-banner {
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 40px;
+  margin-bottom: 30px;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+}
+
+.choice-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1e293b;
+  border: 2px solid #334155;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 100px;
+}
+
+.choice-btn:hover:not(:disabled) {
+  border-color: #3b82f6;
+  background: #233044;
+  transform: translateY(-5px);
+}
+
+.btn-emoji { font-size: 2.5rem; }
+.btn-text { margin-top: 5px; font-weight: 600; }
+
+.reset-score {
+  margin-top: 40px;
+  background: transparent;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Animations */
+.shaking-left { animation: shakeLeft 0.5s infinite; }
+.shaking-right { animation: shakeRight 0.5s infinite; }
+
+@keyframes shakeLeft {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(20deg); }
+}
+
+@keyframes shakeRight {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-20deg); }
+}

@@ -1,0 +1,141 @@
+/* Container Layout */
+.ttt-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 80vh;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.ttt-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Status Banner - Modern Glass Look */
+.ttt-status {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 35px;
+  padding: 12px 50px;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* The Grid Board - Precisely Calculated */
+.ttt-grid {
+  display: grid;
+  /* (3 * 100px) + (2 * 12px gap) = 324px total content width */
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 12px; 
+  padding: 15px;
+  background: #1e293b;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  border: 1px solid #334155;
+  box-sizing: content-box; /* Ensures padding doesn't shrink the grid */
+}
+
+/* Individual Square Boxes */
+.ttt-square {
+  width: 100px;
+  height: 100px;
+  background: #0f172a;
+  border: 2px solid #334155;
+  border-radius: 12px;
+  font-size: 3.5rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #ffffff;
+  margin: 0; /* Prevents alignment bleeding */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hover Highlight - Professional Glow */
+.ttt-square:hover:not(.filled) {
+  background: #1e293b;
+  border-color: #3b82f6;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Winner State */
+.ttt-square.winner-sq {
+  background: #1e3a8a;
+  border-color: #f1c40f;
+  box-shadow: 0 0 25px rgba(241, 196, 15, 0.6);
+  animation: winnerPulse 1s infinite alternate;
+}
+
+/* Reset Button */
+.ttt-reset-btn {
+  margin-top: 45px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 16px 55px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border-radius: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+  transition: all 0.2s ease;
+}
+
+.ttt-reset-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(59, 130, 246, 0.5);
+}
+
+.ttt-reset-btn:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes winnerPulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tablet & Mobile Adjustments */
+@media (max-width: 450px) {
+  .ttt-grid {
+    grid-template-columns: repeat(3, 85px);
+    grid-template-rows: repeat(3, 85px);
+    gap: 10px;
+  }
+  .ttt-square {
+    width: 85px;
+    height: 85px;
+    font-size: 2.8rem;
+  }
+  .ttt-title {
+    font-size: 2.2rem;
+  }
+}
