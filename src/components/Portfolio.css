@@ -1,0 +1,278 @@
+:root {
+  --bg: #0b0f14;
+  --surface: #121820;
+  --text: #e6eef8;
+  --muted: #a9b7c6;
+  --primary: #4cc9f0;
+  --accent: #80ed99;
+  --border: #223043;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.page-root {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.site-header {
+  background: linear-gradient(180deg, #0b1320, var(--bg));
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+
+.nav-links a {
+  margin-left: 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 24px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 24px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.hero-actions .btn {
+  margin-right: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #0b0f14;
+  border-color: transparent;
+}
+
+.btn.small {
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.btn.outline {
+  background: transparent;
+  border-color: var(--border);
+}
+
+.btn:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+}
+
+.card .meta {
+  padding: 0;
+  margin: 8px 0 12px;
+  list-style: none;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card .links .btn {
+  margin-right: 8px;
+}
+
+.objective {
+  padding: 16px;
+}
+
+.section {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+
+.section h2 {
+  margin: 8px 0 16px;
+  font-size: 24px;
+}
+
+.grid.cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card-media {
+  max-height: 160px;
+  overflow: hidden;
+}
+
+.grid.skills {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.skill-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.skill-group h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.skill-group ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.timeline .timeline-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.edu .edu-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.copy {
+  margin-left: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.copy:hover {
+  color: var(--text);
+  border-color: var(--primary);
+}
+
+.copy:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 16px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    margin-right: 12px;
+  }
+}

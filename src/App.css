@@ -81,7 +81,7 @@ body {
 }
 
 .main-menu {
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
 }
 
@@ -105,6 +105,10 @@ body {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-card:hover {
@@ -112,6 +116,25 @@ body {
   border-color: #3b82f6;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
   background: #233044;
+}
+
+/* Highlighting the Portfolio Card */
+.portfolio-highlight {
+  border: 2px solid #3b82f6 !important;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* Future Game Card Styling */
+.future-card {
+  opacity: 0.7;
+  filter: grayscale(0.5);
+  cursor: default !important;
+}
+
+.future-card:hover {
+  transform: none;
+  border-color: #334155;
+  background: #1e293b;
 }
 
 .card-icon {
@@ -129,6 +152,45 @@ body {
   font-size: 0.95rem;
 }
 
+/* Portfolio Component Styles (Based on Resume) */
+.portfolio-content {
+  text-align: left;
+  max-width: 900px;
+  width: 100%;
+  padding: 40px;
+  background: #1e293b;
+  border-radius: 16px;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  line-height: 1.6;
+}
+
+.portfolio-content h2 {
+  color: #3b82f6;
+  border-bottom: 2px solid #334155;
+  padding-bottom: 10px;
+  margin-top: 30px;
+}
+
+.profile-header h2 {
+  margin-top: 0;
+  font-size: 2.5rem;
+  border: none;
+}
+
+.project-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.project-item h4 {
+  margin: 0 0 5px 0;
+  color: #60a5fa;
+}
+
 /* Active Game Stage */
 .active-game-stage {
   width: 100%;
@@ -136,6 +198,14 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 30px;
+}
+
+.coming-soon-display {
+  text-align: center;
+  padding: 60px;
+  background: #1e293b;
+  border-radius: 16px;
+  border: 1px dashed #3b82f6;
 }
 
 .exit-btn {
@@ -147,6 +217,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s;
+  margin-top: 20px;
 }
 
 .exit-btn:hover {
@@ -160,6 +231,7 @@ body {
   color: #475569;
   font-size: 0.85rem;
   border-top: 1px solid #1e293b;
+  margin-top: auto;
 }
 
 /* Mobile Responsiveness */
@@ -172,11 +244,19 @@ body {
   
   .nav-bar {
     width: 100%;
-    overflow-x: auto;
-    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
   }
   
   .nav-btn {
     white-space: nowrap;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+
+  .portfolio-content {
+    padding: 20px;
   }
 }
