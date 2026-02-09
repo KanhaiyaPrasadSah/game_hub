@@ -58,6 +58,16 @@
   font-weight: bold;
 }
 
+/* dropdowns for mode & difficulty */
+.input-group select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #252525;
+  color: white;
+  font-weight: bold;
+}
+
 .player-inputs h3 {
   margin-top: 0;
   font-size: 1.1rem;
@@ -92,7 +102,7 @@
   transition: all 0.2s ease;
 }
 
-.start-btn:hover { 
+.start-btn:hover {
   background-color: #0056b3;
   box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
 }
@@ -183,7 +193,7 @@
 }
 
 .line.drawn {
-  background-color: #f1c40f; 
+  background-color: #f1c40f;
   box-shadow: 0 0 12px rgba(241, 196, 15, 0.6);
 }
 

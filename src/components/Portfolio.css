@@ -99,17 +99,24 @@ img {
   border: 1px solid var(--border);
   font-size: 14px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
   border-color: var(--primary);
   color: var(--primary);
+  transform: translateY(-2px);
 }
 
 .btn.primary {
   background: var(--primary);
   color: #0b0f14;
   border-color: transparent;
+}
+
+.btn.primary:hover {
+  background: #3ab8e0;
+  transform: translateY(-2px);
 }
 
 .btn.small {
@@ -127,19 +134,65 @@ img {
   outline-offset: 2px;
 }
 
-.card {
+/* PROJECT & SKILLS CARDS - HOVER EFFECTS */
+.card,
+.skill-group {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.card:hover,
+.skill-group:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(76, 201, 240, 0.15);
+}
+
+.card::before,
+.skill-group::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(76, 201, 240, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card:hover::before,
+.skill-group:hover::before {
+  opacity: 1;
+}
+
+.card-media img {
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-media img {
+  transform: scale(1.05);
 }
 
 .card-body {
   padding: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .card h3 {
   margin: 0 0 8px;
+  transition: color 0.3s ease;
+}
+
+.card:hover h3 {
+  color: var(--primary);
 }
 
 .card .meta {
@@ -178,6 +231,7 @@ img {
 .card-media {
   max-height: 160px;
   overflow: hidden;
+  position: relative;
 }
 
 .grid.skills {
@@ -187,21 +241,32 @@ img {
 }
 
 .skill-group {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 16px;
+  position: relative;
 }
 
 .skill-group h3 {
   margin: 0 0 8px;
   font-size: 18px;
   color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.skill-group:hover h3 {
+  color: var(--primary);
 }
 
 .skill-group ul {
   margin: 0;
   padding-left: 18px;
+}
+
+.skill-group li {
+  transition: color 0.3s ease;
+}
+
+.skill-group:hover li {
+  color: var(--text);
 }
 
 .timeline .timeline-item {
@@ -235,11 +300,13 @@ img {
   color: var(--muted);
   border: 1px solid var(--border);
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .copy:hover {
   color: var(--text);
   border-color: var(--primary);
+  background: rgba(76, 201, 240, 0.1);
 }
 
 .copy:focus {
@@ -274,5 +341,11 @@ img {
   .nav-links a {
     margin-left: 0;
     margin-right: 12px;
+  }
+
+  /* Reduce hover lift on mobile for better UX */
+  .card:hover,
+  .skill-group:hover {
+    transform: translateY(-4px);
   }
 }

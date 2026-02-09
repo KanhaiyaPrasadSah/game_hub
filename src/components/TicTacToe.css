@@ -139,3 +139,33 @@
     font-size: 2.2rem;
   }
 }
+
+.ttt-mode-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ttt-mode-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+
+.ttt-mode-btn.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(59, 130, 246, 0.4);
+}
+
+.ttt-mode-btn:hover {
+  transform: translateY(-1px);
+}
