@@ -4,7 +4,7 @@ import TicTacToe from './components/ticTacToe';
 import DotsAndBoxes from './components/dotsAndBoxes';
 import RockPaperScissors from './components/rockPaperScissors';
 import Portfolio from './components/portfolio'; // Make sure to create this component
-import './App.css';
+import './app.css';
 
 function App() {
   // 'menu' is the home screen, otherwise it stores the key of the active section

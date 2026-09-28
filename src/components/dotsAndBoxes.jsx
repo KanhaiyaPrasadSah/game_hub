@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './DotsAndBoxes.css';
+import './dotsAndBoxes.css';
 
 const DotsAndBoxes = () => {
   // Game States: 'setup' or 'playing'

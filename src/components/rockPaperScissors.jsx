@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './RockPaperScissors.css';
+import './rockPaperScissors.css';
 
 const RockPaperScissors = () => {
   const [playerChoice, setPlayerChoice] = useState(null);
