@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 // Importing each game from your components folder
-import TicTacToe from './components/TicTacToe';
-import DotsAndBoxes from './components/DotsAndBoxes';
-import RockPaperScissors from './components/RockPaperScissors';
-import Portfolio from './components/Portfolio'; // Make sure to create this component
+import TicTacToe from './components/ticTacToe';
+import DotsAndBoxes from './components/dotsAndBoxes';
+import RockPaperScissors from './components/rockPaperScissors';
+import Portfolio from './components/portfolio'; // Make sure to create this component
 import './App.css';
 
 function App() {
@@ -114,5 +114,5 @@ function App() {
     </div>
   );
 }
-
+//just changed file name
 export default App;
